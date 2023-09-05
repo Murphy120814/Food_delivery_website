@@ -1,14 +1,35 @@
-//   <!-- Now making the react element without using JSX -->
+//for nested html content
 
-const heading = React.createElement(
+const headingChildren1 = React.createElement(
   "h1",
-  { id: "heading" },
-  "Hello world form React"
-); //creating the element is the job of core react hence we use only React and not REactDOM
+  { id: "heading1" , key :"heading1"},
+  "Hello I am heading1"
+);
+const headingChildren2 = React.createElement(
+  "h1",
+  { id: "heading2" , key :"heading2"},
+  "Hello I am heading2"
+);
+const headingChildren3 = React.createElement(
+  "h1",
+  { id: "heading3", key :"heading3" },
+  "Hello I am heading3"
+);
+const headingChildren4 = React.createElement(
+  "h1",
+  { id: "heading4" , key :"heading4"},
+  "Hello I am heading4"
+);
 
-console.log(heading);  //? this is returning the object 
-const root = ReactDOM.createRoot(document.getElementById("root")); //react needs to have root
-//but here creating root is the job of ReactDOM library hence we used ReactDOm
+const parentDiv = React.createElement("div", { id: "parent" }, [
+  headingChildren1,
+  headingChildren2,
+  headingChildren3,
+  headingChildren4,
+]);
 
-root.render(heading); //? render method is responsible for converting the object into h1 tag and put it on DOM 
-//to render the heading inside the root
+console.log(parentDiv)
+//parent can take array of children element if there are multiple children elements
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(parentDiv);
