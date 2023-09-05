@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Namste React </title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./App.js" defer></script>
 </head>
 
 <body>
@@ -18,16 +20,7 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
 
-    <!-- Now making the react element without using JSX -->
-    <script>
-        const heading = React.createElement("h1", {}, "Hello world form React") //creating the element is the job of core react hence we use only React and not REactDOM 
-        const root = ReactDOM.createRoot(document.getElementById("root")); //react needs to have root 
-        //but here creating root is the job of ReactDOM library hence we used ReactDOm 
 
-        root.render(heading)  //to render the heading inside the root 
-
-
-    </script>
 
 </body>
 
