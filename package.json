@@ -2,7 +2,7 @@
   "name": "food_delivery_website",
   "version": "1.0.0",
   "description": "this is Namste react bootCamp course ",
-  "source":"index.html",
+  "source": "./public/index.html",
   "scripts": {
     "test": "jest",
     "start": "parcel",
@@ -22,7 +22,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "browserslist":[
+  "browserslist": [
     "last 2 versions"
   ]
 }
