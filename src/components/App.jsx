@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import { Header, Body } from "./index";
 
 function App() {
   return (
     <div>
-      <h1>HEllo world </h1>
+      <Header />
+      <Body />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
