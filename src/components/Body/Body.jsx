@@ -6,7 +6,7 @@ function Body() {
   return (
     <div className="body">
       <Search />
-      <RestaurantContainer />
+      <RestaurantContainer heading = "Restaurants with online delivery" />
     </div>
   );
 }
