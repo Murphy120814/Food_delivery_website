@@ -1,11 +1,9 @@
-import React from 'react'
+import React from "react";
 
 function Search() {
   return (
-    <div>
-      THis is Search Container
-    </div>
-  )
+    <div className="search">THis is Search Container this is container</div>
+  );
 }
 
-export default Search
+export default Search;

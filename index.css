@@ -2,4 +2,5 @@
     font-size: 62.5%;
     font-family: 'Times New Roman', Times, serif;
     box-sizing: border-box;
+    border: 2px solid red;
 }

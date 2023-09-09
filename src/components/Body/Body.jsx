@@ -4,7 +4,7 @@ import RestaurantContainer from "./Restaurant/RestaurantContainer";
 import "./body.css";
 function Body() {
   return (
-    <div>
+    <div className="body">
       <Search />
       <RestaurantContainer />
     </div>

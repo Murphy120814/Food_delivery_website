@@ -9,6 +9,7 @@ Body
 -Search_component
 -card_container
     --restaurant Cards
+        ---img ,rating, name of restaurant , cuisines 
 
 
 Footer

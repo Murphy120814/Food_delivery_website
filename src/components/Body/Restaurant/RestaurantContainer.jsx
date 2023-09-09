@@ -1,11 +1,21 @@
-import React from 'react'
+import React from "react";
+import RestaurantCard from "./RestaurantCard";
 
 function RestaurantContainer() {
   return (
-    <div>
-      THis is RestaurantContainer
+    <div className="restaurant__container">
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
     </div>
-  )
+  );
 }
 
-export default RestaurantContainer
+export default RestaurantContainer;
