@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import RestaurantCard from "./RestaurantCard";
-import { restaurantList } from "../../../constants/constants";
+import { restaurantList } from "../../../utils/constants";
 
 function RestaurantContainer({ heading }) {
+  const [listOfRestaurant, setListOfRestaurant] = useState(restaurantList);
+  
   return (
     <>
       <h1
@@ -14,8 +16,17 @@ function RestaurantContainer({ heading }) {
         }}>
         {heading}
       </h1>
+      <button
+        onClick={() => {
+          const filteredRestaurant = listOfRestaurant.filter(
+            (res) => res.info?.avgRating > 4
+          );
+          setListOfRestaurant(filteredRestaurant);
+        }}>
+        Top Rated Restaurants
+      </button>
       <div className="restaurant__container">
-        {restaurantList.map((restaurant) => (
+        {listOfRestaurant.map((restaurant) => (
           <RestaurantCard
             restaurantData={restaurant.info}
             key={restaurant.info?.id}
