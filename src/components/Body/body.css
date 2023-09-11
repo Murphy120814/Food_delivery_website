@@ -11,13 +11,7 @@
     justify-content: space-evenly;
 }
 
-/* !Search design */
-.search {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 /* !Restaurant Card */
 
@@ -48,4 +42,23 @@
 
     justify-content: space-between;
     align-items: center;
+}
+
+
+/*! feature container */
+
+.restaurant__feature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid red;
+}
+
+
+
+/* Active Btn conditional */
+
+.active__btn {
+    background-color: black;
+    color: white;
 }

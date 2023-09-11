@@ -1,0 +1,21 @@
+.carousel__container {
+    border: 2px solid red;
+    display: flex;
+    overflow-y: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carousel__element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.carousel__element img {
+    height: 10rem;
+    width: 10rem;
+    /* background-position: center; */
+    /* background-size: cover; */
+}
