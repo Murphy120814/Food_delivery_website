@@ -12,25 +12,25 @@ async function dataFetch() {
     const data = await fetch(FETCH_URL);
     const dataJSON = await data.json();
     const arrayOfRestaurantAndCarousel = dataJSON.data.cards.filter(
-      (card) => card.card.card.gridElements?.infoWithStyle?.["@type"]
+      (card) => card.card.card?.gridElements?.infoWithStyle?.["@type"]
     );
+    console.log(arrayOfRestaurantAndCarousel);
     const arrayOfCarousel = arrayOfRestaurantAndCarousel.filter(
       (card) =>
         card.card.card.gridElements?.infoWithStyle?.["@type"] ===
           "type.googleapis.com/swiggy.gandalf.widgets.v2.ImageInfoLayoutCard" &&
         card.card.card.gridElements?.infoWithStyle?.info.length > 10
     );
+
     const arrayOfRestaurant = arrayOfRestaurantAndCarousel.filter(
       (card) =>
         card.card.card.gridElements?.infoWithStyle?.["@type"] ===
           "type.googleapis.com/swiggy.presentation.food.v2.FavouriteRestaurantInfoWithStyle" &&
-        card.card.card.gridElements?.infoWithStyle?.restaurants.length > 10
+        card.card.card.gridElements?.infoWithStyle?.collectionId === "84124"
+      //card.card.card.gridElements?.infoWithStyle?.restaurants.length >
     );
     console.log("Fetched data:", arrayOfRestaurant, arrayOfCarousel);
-    return [
-      arrayOfCarousel,
-      arrayOfRestaurant,
-    ];
+    return [arrayOfCarousel, arrayOfRestaurant];
   } catch (error) {
     console.error("Error fetching data:", error);
     throw error; // Rethrow the error to be caught in the caller
