@@ -1,5 +1,5 @@
 export const FETCH_URL =
-  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.9894007&lng=73.1175162&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+  "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.9894007&lng=73.1175162&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
 // async function dataFetch() {
 //   const data = await fetch(FETCH_URL);
