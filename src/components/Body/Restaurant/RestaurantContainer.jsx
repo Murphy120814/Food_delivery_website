@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
-import dataFetch from "../../../utils/dataFetch";
+
 import Filter from "../Filter/Filter";
 import { Shimmer } from "../../index";
 import Search from "../Search/Search";
 import { Link } from "react-router-dom";
 
-function RestaurantContainer({ heading }) {
+function RestaurantContainer({ heading, dataFetch }) {
   const [listOfRestaurant, setListOfRestaurant] = useState(null);
   const [filteredRestaurant, setFilteredRestaurant] = useState(null);
   const [searchText, setSearchText] = useState("");
@@ -110,7 +110,7 @@ function RestaurantContainer({ heading }) {
         <Shimmer />
       ) : (
         <div className="restaurant__container">
-          {/* {console.log(listOfRestaurant instanceof Array, listOfRestaurant)} */}
+          {console.log(listOfRestaurant instanceof Array, listOfRestaurant)}
           {!searchFound ? (
             <h1> Nothing Found</h1>
           ) : (

@@ -33,7 +33,8 @@ function Carousel() {
               imageId={carouselElement.imageId}
               key={carouselElement.id}
               altText={carouselElement.accessibility?.altText}
-              name={carouselElement.action?.text}
+              // name={carouselElement.action?.text}
+              entityId={carouselElement.entityId}
             />
           ))
         )}

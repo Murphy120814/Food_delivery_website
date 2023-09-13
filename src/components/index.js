@@ -7,3 +7,4 @@ export { default as ContactUS } from "./ContactUs/ContactUs";
 export { default as Error } from "./Error/Error";
 export { default as Cart } from "./Cart/Cart";
 export { default as RestaurantMenu } from "./RestaurantMenu/RestaurantMenu";
+export { default as CarouselRestaurant } from "./Body/Restaurant/CarouselRestaurant";
