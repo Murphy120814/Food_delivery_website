@@ -7,14 +7,14 @@ export const FETCH_URL =
 //   return dataJSON.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
 //     ?.restaurants;
 // }
-async function dataFetch() {
+export default async function dataFetch() {
   try {
     const data = await fetch(FETCH_URL);
     const dataJSON = await data.json();
     const arrayOfRestaurantAndCarousel = dataJSON.data.cards.filter(
       (card) => card.card.card?.gridElements?.infoWithStyle?.["@type"]
     );
-    console.log(arrayOfRestaurantAndCarousel);
+    // console.log(arrayOfRestaurantAndCarousel);
     const arrayOfCarousel = arrayOfRestaurantAndCarousel.filter(
       (card) =>
         card.card.card.gridElements?.infoWithStyle?.["@type"] ===
@@ -29,12 +29,10 @@ async function dataFetch() {
         card.card.card.gridElements?.infoWithStyle?.collectionId === "84124"
       //card.card.card.gridElements?.infoWithStyle?.restaurants.length >
     );
-    console.log("Fetched data:", arrayOfRestaurant, arrayOfCarousel);
+    // console.log("Fetched data:", arrayOfRestaurant, arrayOfCarousel);
     return [arrayOfCarousel, arrayOfRestaurant];
   } catch (error) {
     console.error("Error fetching data:", error);
     throw error; // Rethrow the error to be caught in the caller
   }
 }
-
-export default dataFetch;

@@ -20,7 +20,7 @@ function Carousel() {
     fetchDataAndLogArray();
   }, []);
 
-  console.log("thisis Lit", listOfCarousel);
+  // console.log("thisis Lit", listOfCarousel);
   return (
     <>
       <h1>Whats on your mind</h1>

@@ -4,6 +4,7 @@ import dataFetch from "../../../utils/dataFetch";
 import Filter from "../Filter/Filter";
 import { Shimmer } from "../../index";
 import Search from "../Search/Search";
+import { Link } from "react-router-dom";
 
 function RestaurantContainer({ heading }) {
   const [listOfRestaurant, setListOfRestaurant] = useState(null);
@@ -109,15 +110,16 @@ function RestaurantContainer({ heading }) {
         <Shimmer />
       ) : (
         <div className="restaurant__container">
-          {console.log(listOfRestaurant instanceof Array, listOfRestaurant)}
+          {/* {console.log(listOfRestaurant instanceof Array, listOfRestaurant)} */}
           {!searchFound ? (
             <h1> Nothing Found</h1>
           ) : (
             filteredRestaurant.map((restaurant) => (
-              <RestaurantCard
-                restaurantData={restaurant.info}
-                key={restaurant.info?.id}
-              />
+              <Link
+                to={"/restaurants/" + restaurant.info?.id}
+                key={restaurant.info?.id}>
+                <RestaurantCard restaurantData={restaurant.info} />
+              </Link>
             ))
           )}
         </div>

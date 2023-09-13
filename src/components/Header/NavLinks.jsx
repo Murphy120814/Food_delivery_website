@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function NavLinks({ logIn, setLogIn }) {
-  console.log("rerender");
+  // console.log("rerender");
   return (
     <ul>
       <li>
