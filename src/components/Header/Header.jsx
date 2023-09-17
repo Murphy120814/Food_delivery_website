@@ -3,11 +3,11 @@ import Logo from "./Logo";
 import "./header.css";
 import NavBar from "./NavBar";
 
-function Header() {
+function Header({ onlineStatus }) {
   return (
     <div className="header">
       <Logo />
-      <NavBar />
+      <NavBar onlineStatus={onlineStatus} />
     </div>
   );
 }

@@ -9,13 +9,16 @@ import {
   RestaurantMenu,
   CarouselRestaurant,
 } from "./index";
+
+import useOnlineStatus from "../utils/useOnlineStatus";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 
 function App() {
+  const onlineStatus = useOnlineStatus();
   return (
     <div>
-      <Header />
-      <Outlet />
+      <Header onlineStatus={onlineStatus} />
+      <Outlet context={onlineStatus} />
     </div>
   );
 }

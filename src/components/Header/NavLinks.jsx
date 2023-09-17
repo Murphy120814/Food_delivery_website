@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NavLinks({ logIn, setLogIn }) {
+function NavLinks({ logIn, setLogIn, onlineStatus }) {
   // console.log("rerender");
   return (
     <ul>
+      <li>Online Status: {!onlineStatus ? "🔴" : "🟢"} </li>
       <li>
         <Link to="/">Home</Link>
       </li>
