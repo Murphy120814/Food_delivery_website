@@ -10,6 +10,7 @@ function RestaurantCard({ restaurantData }) {
     cuisines,
     avgRatingString,
     sla: { slaString: value },
+    aggregatedDiscountInfoV3,
   } = restaurantData;
   return (
     <div className="restaurant__card">
@@ -30,6 +31,16 @@ function RestaurantCard({ restaurantData }) {
         </div>
         <h4>{cuisines.join(", ")}</h4>
       </div>
+      {aggregatedDiscountInfoV3 ? (
+        <label>
+          {aggregatedDiscountInfoV3?.header ??
+            "" + aggregatedDiscountInfoV3?.subHeader ??
+            "" + aggregatedDiscountInfoV3?.discountTag ??
+            ""}
+        </label>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
