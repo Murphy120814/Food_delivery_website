@@ -9,6 +9,8 @@ import {
   RestaurantMenu,
   CarouselRestaurant,
 } from "./index";
+import appStore from "../utils/appStore";
+import { Provider } from "react-redux";
 
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { createBrowserRouter, Outlet } from "react-router-dom";
@@ -16,10 +18,12 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 function App() {
   const onlineStatus = useOnlineStatus();
   return (
-    <div>
-      <Header onlineStatus={onlineStatus} />
-      <Outlet context={onlineStatus} />
-    </div>
+    <>
+      <Provider store={appStore}>
+        <Header onlineStatus={onlineStatus} />
+        <Outlet context={onlineStatus} />
+      </Provider>
+    </>
   );
 }
 

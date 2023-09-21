@@ -1,5 +1,7 @@
 import React from "react";
 import altFoodImg from "../../assets/altFoodImg.png";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../utils/cartSlice";
 
 function RestaurantMenuItemCards({
   title,
@@ -8,6 +10,10 @@ function RestaurantMenuItemCards({
   index,
   setShowIndex,
 }) {
+  const dispatch = useDispatch();
+  const handleAddCart = (item) => {
+    dispatch(addItem(item));
+  };
   const handleClick = () => {
     setShowIndex(index);
   };
@@ -38,7 +44,9 @@ function RestaurantMenuItemCards({
               </div>
               <div className="item__img relative">
                 <div className="absolute bottom-0 right-[45]">
-                  <button className="p-2 bg-white shadow-lg text-black rounded-lg">
+                  <button
+                    className="p-2 bg-white shadow-lg text-black rounded-lg"
+                    onClick={() => handleAddCart(itemCard)}>
                     Add +
                   </button>
                 </div>

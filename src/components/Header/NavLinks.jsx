@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 function NavLinks({ logIn, setLogIn, onlineStatus }) {
   // console.log("rerender");
+
+  const cartItem = useSelector((store) => store.cart.items);
   return (
     <ul>
       <li>Online Status: {!onlineStatus ? "🔴" : "🟢"} </li>
@@ -16,7 +18,7 @@ function NavLinks({ logIn, setLogIn, onlineStatus }) {
         <Link to="/contact">Contact Us</Link>
       </li>
       <li>
-        <Link to="/cart">Cart</Link>
+        <Link to="/cart">Cart ({cartItem.length} items)</Link>
       </li>
       <button
         onClick={() => {
